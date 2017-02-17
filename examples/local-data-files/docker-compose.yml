@@ -2,9 +2,8 @@ zeppelin:
   image: mielhostens/bovi-analytics
   environment:
     ZEPPELIN_PORT: 8080
-    #ZEPPELIN_JAVA_OPTS: >-
-    #  -Dspark.driver.memory=2g
-    #  -Dspark.executor.memory=4g
+    ZEPPELIN_JAVA_OPTS: >-
+      -Dspark.executor.memory=4g
     MASTER: local[*]
   ports:
     - 8080:8080

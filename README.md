@@ -17,15 +17,13 @@ This image is large and opinionated. It contains:
   - hbase
   - elasticsearch
 
-A prior build of `dylanmei/zeppelin:latest` contained Spark 1.6.0, Python 2.7, and **all** of the stock interpreters. That image is still available as `dylanmei/zeppelin:0.6.0-stable`.
-
 ## simple usage
 
 To start Zeppelin pull the `latest` image and run the container:
 
 ```
-docker pull dylanmei/zeppelin
-docker run --rm -p 8080:8080 dylanmei/zeppelin
+docker pull mielhostens/bovi-analytics
+docker run --rm -p 8080:8080 mielhostens/bovi-analytics
 ```
 
 Zeppelin will be running at `http://${YOUR_DOCKER_HOST}:8080`.
@@ -41,7 +39,7 @@ You can use [docker-compose](http://docs.docker.com/compose) to easily run Zeppe
 
 The Docker `onbuild` container is still a part of this project, but **I have no plans to keep it updated**. See the `onbuild` directory to view its `Dockerfile`.
 
-To use it, create a new `Dockerfile` based on `dylanmei/zeppelin:onbuild` and supply a new, executable `install.sh` file in the same directory. It will override the base one via Docker's [ONBUILD](https://docs.docker.com/reference/builder/#onbuild) instruction.
+To use it, create a new `Dockerfile` based on `mielhostens/bovi-analytics:onbuild` and supply a new, executable `install.sh` file in the same directory. It will override the base one via Docker's [ONBUILD](https://docs.docker.com/reference/builder/#onbuild) instruction.
 
 The steps, expressed here as a script, can be as simple as:
 
